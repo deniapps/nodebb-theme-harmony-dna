@@ -28,7 +28,7 @@
 		{{{ end }}}
 	</ul>
 	<div class="w-100">
-		{{{ if false && !config.disableCustomUserSkins }}}
+		{{{ if !config.disableCustomUserSkins }}}
 		<!-- IMPORT partials/skin-switcher.tpl -->
 		{{{ end }}}
 
