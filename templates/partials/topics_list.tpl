@@ -10,15 +10,15 @@
 
 
 		<div class="d-flex p-0 col-lg-7 gap-2 gap-lg-3 align-items-start">
+			{{{ if showSelect }}}
+				<div class="checkbox pt-2 m-0 d-none d-lg-flex" style="max-width:max-content">
+					<i component="topic/select" class="fa text-muted pointer fa-square-o p-1"></i>
+				</div>
+			{{{ end }}}
 			<div class="flex-shrink-0 position-relative">
 				<a class="text-decoration-none" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 					{buildAvatar(./user, "40px", true, "avatar avatar-tooltip")}
 				</a>
-				{{{ if showSelect }}}
-				<div class="checkbox position-absolute top-100 start-50 translate-middle-x pt-2 m-0 d-none d-lg-flex" style="max-width:max-content">
-					<i component="topic/select" class="fa text-muted pointer fa-square-o p-1"></i>
-				</div>
-				{{{ end }}}
 			</div>
 			<div class="flex-grow-1 d-flex flex-wrap gap-1">
 				<h3 component="topic/header" class="title text-break fs-5 fw-semibold m-0 tracking-tight w-100 {{{ if showSelect }}}me-4 me-lg-0{{{ end }}}">

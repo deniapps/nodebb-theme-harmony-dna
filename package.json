@@ -1,14 +1,14 @@
 {
-  "name": "nodebb-theme-harmony",
-  "version": "1.0.0-beta.113",
+  "name": "nodebb-theme-harmony-dna",
+  "version": "1.0.0",
   "nbbpm": {
     "compatibility": "^3.0.0"
   },
-  "description": "Harmony theme for NodeBB",
+  "description": "Clone of Harmony theme for NodeBB for Community.SwimStandards.Com",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NodeBB/nodebb-theme-harmony"
+    "url": "https://github.com/deniapps/nodebb-theme-harmony-dna"
   },
   "scripts": {
     "lint": "eslint ."
@@ -22,6 +22,11 @@
   ],
   "contributors": [
     {
+      "name": "Adam C",
+      "email": "adam@deniapps.com",
+      "url": "https://github.com/deniapps"
+    },
+    {
       "name": "Julian Lam",
       "email": "julian@nodebb.org",
       "url": "https://github.com/julianlam"
@@ -34,7 +39,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NodeBB/nodebb-theme-harmony/issues"
+    "url": "https://github.com/deniapps/nodebb-theme-harmony-dna/issues"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
