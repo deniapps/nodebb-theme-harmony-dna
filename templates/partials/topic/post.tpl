@@ -67,7 +67,7 @@
 		</div>
 
 		<div class="content mt-2 text-break" component="post/content" itemprop="text">
-			{posts.content}
+			{posts.content.replaceAll('<table', '<div class="table-responsive"><table').replaceAll('/table>', '/table></div>')}
 		</div>
 	</div>
 </div>

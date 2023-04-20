@@ -132,7 +132,7 @@
 		.topic .posts {
 			[component="post"] {
 				[component="post/actions"] {
-					opacity: 0;
+					opacity: 0.5;
 					transition: $transition-fade;
 
 					&:has([aria-expanded="true"]) {
