@@ -9,8 +9,8 @@
 			{{{ end }}}
 
 			{{{ if config.showSiteTitle }}}
-			<a component="siteTitle" class="text-truncate align-self-stretch align-items-center d-flex" href="{{{ if title:url }}}{title:url}{{{ else }}}{relative_path}/{{{ end }}}">
-				<h1 class="ss-title fw-bold text-body mb-0">{config.siteTitle}</h1>
+			<a component="siteTitle" id="site-title-link" class="text-truncate align-self-stretch align-items-center d-flex" href="{{{ if title:url }}}{title:url}{{{ else }}}{relative_path}/{{{ end }}}">
+				<h1 class="ss-title fw-bold mb-0">{config.siteTitle}</h1>
 			</a>
 			{{{ end }}}
 		</div>
