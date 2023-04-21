@@ -135,3 +135,8 @@
 	{{{ end }}}
 </div>
 {{{ end }}}
+
+
+<script>
+  $("table").wrap($("<div />").addClass("table-responsive"));
+</script>

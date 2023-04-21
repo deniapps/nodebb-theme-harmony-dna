@@ -9,8 +9,6 @@ $(document).ready(function () {
   setupNavTooltips();
   fixPlaceholders();
 
-  $("table").wrap($("<div />").addClass("table-responsive"));
-
   $('[component="skinSwitcher"]').on("click", ".dropdown-item", function () {
     const skin = $(this).attr("data-value");
     $('[component="skinSwitcher"] .dropdown-item .fa-check').addClass(
