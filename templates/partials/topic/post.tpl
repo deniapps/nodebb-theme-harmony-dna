@@ -128,6 +128,20 @@
 	</div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="ssImgModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Enlarge Image">
+      </div>
+    </div>
+  </div>
+</div>
+
 {{{ if (!./index && widgets.mainpost-footer.length) }}}
 <div data-widget-area="mainpost-footer">
 	{{{ each widgets.mainpost-footer }}}
@@ -138,5 +152,15 @@
 
 
 <script>
+$(document).ready(function() {
+	console.log("live javascript added!")
   $("table").wrap($("<div />").addClass("table-responsive"));
+	$('a[href] img[src]').parent('a').click(function(e) {
+		e.preventDefault();
+  	var imageUrl = $(this).attr('href');
+		$('#modalImage').attr('src', imageUrl);
+		$('#ssImgModal').modal('show');
+
+	});
+});
 </script>
