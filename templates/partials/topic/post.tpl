@@ -152,15 +152,27 @@
 
 
 <script>
-$(document).ready(function() {
-	console.log("live javascript added!")
-  $("table").wrap($("<div />").addClass("table-responsive"));
-	$('a[href*=".jpg"], a[href*=".png"], a[href*=".gif"]').has('img').click(function(e) {
-    e.preventDefault();
-  	var imageUrl = $(this).attr('href');
-		$('#modalImage').attr('src', imageUrl);
-		$('#ssImgModal').modal('show');
-	});
-	
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("live javascript added!");
+
+  var tables = document.getElementsByTagName('table');
+  for (var i = 0; i < tables.length; i++) {
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('table-responsive');
+    tables[i].parentNode.insertBefore(wrapper, tables[i]);
+    wrapper.appendChild(tables[i]);
+  }
+
+  var links = document.querySelectorAll('a[href*=".jpg"], a[href*=".png"], a[href*=".gif"]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].querySelector('img')) {
+      links[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        var imageUrl = this.getAttribute('href');
+        document.querySelector('#modalImage').setAttribute('src', imageUrl);
+        document.querySelector('#ssImgModal').classList.add('show');
+      });
+    }
+  }
 });
 </script>
