@@ -152,8 +152,7 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("live javascript added!");
+
 
   var tables = document.getElementsByTagName('table');
   for (var i = 0; i < tables.length; i++) {
@@ -170,9 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         var imageUrl = this.getAttribute('href');
         document.querySelector('#modalImage').setAttribute('src', imageUrl);
-        document.querySelector('#ssImgModal').classList.add('show');
+				$('#ssImgModal').modal('show');
       });
     }
   }
-});
+
 </script>
