@@ -130,7 +130,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="ssImgModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -155,12 +155,12 @@
 $(document).ready(function() {
 	console.log("live javascript added!")
   $("table").wrap($("<div />").addClass("table-responsive"));
-	$('a[href] img[src]').parent('a').click(function(e) {
-		e.preventDefault();
+	$('a[href*=".jpg"], a[href*=".png"], a[href*=".gif"]').has('img').click(function(e) {
+    e.preventDefault();
   	var imageUrl = $(this).attr('href');
 		$('#modalImage').attr('src', imageUrl);
 		$('#ssImgModal').modal('show');
-
 	});
+	
 });
 </script>
