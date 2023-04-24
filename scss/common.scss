@@ -27,6 +27,8 @@ hr {
 #modalImage {
 	display: block;
 	margin: 0 auto;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 .ff-base {
