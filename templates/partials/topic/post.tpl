@@ -149,3 +149,13 @@
 	{{{ end }}}
 </div>
 {{{ end }}}
+
+<script>
+  var tables = document.getElementsByTagName('table');
+  for (var i = 0; i < tables.length; i++) {
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('table-responsive');
+    tables[i].parentNode.insertBefore(wrapper, tables[i]);
+    wrapper.appendChild(tables[i]);
+  }
+</script>	

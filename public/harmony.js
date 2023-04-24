@@ -1,7 +1,6 @@
 "use strict";
 
 $(document).ready(function () {
-  console.log("am i running every time?");
   setupNProgress();
   setupMobileMenu();
   setupSearch();
