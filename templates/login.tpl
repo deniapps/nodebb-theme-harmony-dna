@@ -7,7 +7,7 @@
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
 		<div class="row justify-content-center gap-4">
-			<div class="col-12 px-5">
+			<div class="col-12 px-4 ss-login">
 				{{{ if allowLocalLogin }}}
 				<div class="login-block">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
