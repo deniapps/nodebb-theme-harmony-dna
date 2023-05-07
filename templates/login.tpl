@@ -6,9 +6,9 @@
 <div class="row login">
 	<div class="d-flex flex-column gap-2 {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
 		<h2 class="tracking-tight fw-semibold text-center">[[global:login]]</h2>
-		<div class="row justify-content-center gap-5">
-			{{{ if allowLocalLogin }}}
-			<div class="col-12 col-md-5 col-lg-3 px-md-0">
+		<div class="row justify-content-center gap-4">
+			<div class="col-12 px-5">
+				{{{ if allowLocalLogin }}}
 				<div class="login-block">
 					<div class="alert alert-danger alert-dismissible" id="login-error-notify" {{{ if error }}}style="display:block"{{{ else }}}style="display: none;"{{{ end }}}>
 						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -17,27 +17,25 @@
 					</div>
 
 					<form class="d-flex flex-column gap-3" role="form" method="post" id="login-form">
-						<div class="mb-2 d-flex flex-column gap-2">
-							<label for="username">{allowLoginWith}</label>
+						<div class="d-flex flex-column gap-2">
 							<div>
 								<input class="form-control" type="text" placeholder="{allowLoginWith}" name="username" id="username" autocorrect="off" autocapitalize="off" value="{username}"/>
 							</div>
 						</div>
-						<div class="mb-2 d-flex flex-column gap-2">
-							<div class="d-flex justify-content-between align-items-center">
-								<label for="password">[[user:password]]</label>
-								{{{ if allowPasswordReset }}}
-								<a id="reset-link" tabindex="-1" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
-								{{{ end }}}
-							</div>
+						<div class="d-flex flex-column gap-2">
 							<div>
 								<input class="form-control" type="password" placeholder="[[user:password]]" name="password" id="password" {{{ if username }}}autocomplete="off"{{{ end }}}/>
-								<p id="caps-lock-warning" class="text-danger hidden">
-									<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
-								</p>
+								<div class="d-flex justify-content-between align-items-center mt-2">
+								{{{ if allowPasswordReset }}}
+									<p><a id="reset-link" tabindex="-1" class="text-sm text-reset text-decoration-underline" href="{config.relative_path}/reset">[[login:forgot_password]]</a></p>
+								{{{ end }}}
+									<p id="caps-lock-warning" class="text-danger hidden">
+										<i class="fa fa-exclamation-triangle"></i> [[login:caps-lock-enabled]]
+									</p>
+								</div>
 							</div>
 						</div>
-						<div class="mb-2">
+						<div class="mb-2 d-none">
 							<div class="checkbox">
 								<label>
 									<input type="checkbox" name="remember" id="remember" checked /> [[login:remember_me]]
@@ -45,7 +43,7 @@
 							</div>
 						</div>
 						{{{each loginFormEntry}}}
-						<div class="mb-2 loginFormEntry d-flex flex-column gap-2">
+						<div class="loginFormEntry d-flex flex-column gap-2">
 							<label for="login-{loginFormEntry.styleName}">{loginFormEntry.label}</label>
 							<div id="login-{loginFormEntry.styleName}">{{loginFormEntry.html}}</div>
 						</div>
@@ -58,17 +56,13 @@
 
 						<hr/>
 
-						{{{ if allowRegistration }}}
-						<span class="text-sm">[[login:dont_have_account]]</span>
-						<a class="btn btn-outline-light text-body" href="{config.relative_path}/register">[[register:register]]</a>
-						{{{ end }}}
 					</form>
 				</div>
-			</div>
-			{{{ end }}}
 
-			{{{ if alternate_logins }}}
-			<div class="col-12 col-md-5 col-lg-3 px-md-0">
+				{{{ end }}}
+
+				{{{ if alternate_logins }}}
+
 				<div class="alt-login-block d-flex flex-column gap-2">
 					<label>[[login:alternative_logins]]</label>
 					<ul class="alt-logins list-unstyled">
@@ -87,8 +81,15 @@
 						{{{ end }}}
 					</ul>
 				</div>
+				{{{ end }}}
+
+				{{{ if allowRegistration }}}
+				<p class="text-sm">
+						<span>[[login:dont_have_account]]</span>
+						<a class="join-now" href="{config.relative_path}/register">[[register:register]]</a>
+				<p>
+				{{{ end }}}
 			</div>
-			{{{ end }}}
 		</div>
 	</div>
 	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 {{{ if !widgets.sidebar.length }}}hidden{{{ end }}}">
